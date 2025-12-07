@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Quarterly Earnings – Interactive RevealJS Presentation</title>
+
+    <!-- RevealJS Core -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
+
+    <!-- Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
+
+    <!-- MathJax -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- Slide 1: Title -->
+        <section>
+          <h1>Quarterly Earnings Report</h1>
+          <p>Technical Consultant: <strong>24f2006582@ds.study.iitm.ac.in</strong></p>
+
+          <aside class="notes">
+            Welcome stakeholders.  
+            This presentation demonstrates interactive RevealJS capabilities used in financial reporting.
+          </aside>
+        </section>
+
+        <!-- Slide 2: Markdown Slide -->
+        <section data-markdown>
+          <textarea data-template>
+## Revenue Overview (Markdown Slide)
+
+- Q1 Growth: **12%**
+- Q2 Growth: **18%**
+- New customer acquisition ↑
+- Operating margin improved
+
+---
+
+### Financial Formula (Markdown → MathJax)
+
+\[
+ROI = \frac{Net\ Profit}{Investment} \times 100
+\]
+          </textarea>
+        </section>
+
+        <!-- Slide 3: Fragments -->
+        <section>
+          <h2>Key Drivers of Growth</h2>
+          <ul>
+            <li class="fragment">Increase in transaction volume</li>
+            <li class="fragment">Optimized data infrastructure</li>
+            <li class="fragment">Expansion into new markets</li>
+          </ul>
+
+          <aside class="notes">
+            Reveal each point slowly to guide the discussion.
+          </aside>
+        </section>
+
+        <!-- Slide 4: Code sample -->
+        <section>
+          <h2>Financial Data Pipeline (Code Highlighting)</h2>
+
+          <pre>
+            <code class="python" data-line-numbers="1-3|5-8">
+import pandas as pd
+
+# Load quarterly earnings
+df = pd.read_csv("earnings.csv")
+
+# Compute YoY Growth
+df["growth"] = (df["current"] - df["previous"]) / df["previous"]
+print(df)
+            </code>
+          </pre>
+
+          <aside class="notes">
+            This snippet demonstrates automated earnings calculations.
+          </aside>
+        </section>
+
+        <!-- Slide 5: Math with Notes -->
+        <section>
+          <h2>Net Present Value</h2>
+
+          <p>
+          \[
+          NPV = \sum_{t=1}^{n} \frac{C_t}{(1+r)^t}
+          \]
+          </p>
+
+          <aside class="notes">
+            NPV is essential in investment evaluation. r is discount rate, Ct cash flow at time t.
+          </aside>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Reveal Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        transition: "slide",
+        plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
